@@ -9,10 +9,6 @@ module.exports = class Application {
     this.fourohfour= '404'
   }
 
-  404(text) {
-    this.fourohfour= text
-  }
-
   listen(event) {
     var request = event.request || null;
     if (!request) {
