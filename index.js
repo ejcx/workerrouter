@@ -6,9 +6,7 @@ module.exports = class Application {
       PATCH: {},
       HEAD: {}
     };
-
     this.fourohfour= '404'
-
   }
 
   404(text) {
@@ -40,9 +38,7 @@ module.exports = class Application {
         return paths[path](request)
       }
     }
-
-    res.render(this.fourohfour, { status: 404 });
-
+    return new Response(this.fourohfour, { status: 404 });
   }
 
   get(path, f) {
