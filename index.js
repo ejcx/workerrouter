@@ -7,12 +7,12 @@ module.exports = class Application {
       HEAD: {}
     };
 
-    this.404 = '404'
+    this.fourohfour= '404'
 
   }
 
   404(text) {
-    this.404 = text
+    this.fourohfour= text
   }
 
   listen(event) {
@@ -41,7 +41,7 @@ module.exports = class Application {
       }
     }
 
-    res.render(this.404, { status: 404 });
+    res.render(this.fourohfour, { status: 404 });
 
   }
 
