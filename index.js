@@ -6,6 +6,13 @@ module.exports = class Application {
       PATCH: {},
       HEAD: {}
     };
+
+    this.404 = '404'
+
+  }
+
+  404(text) {
+    this.404 = text
   }
 
   listen(event) {
@@ -33,6 +40,9 @@ module.exports = class Application {
         return paths[path](request)
       }
     }
+
+    res.render(this.404, { status: 404 });
+
   }
 
   get(path, f) {
@@ -50,4 +60,6 @@ module.exports = class Application {
   head(path, f) {
     this.routes.HEAD[path] =  f
   }
+
+
 };
